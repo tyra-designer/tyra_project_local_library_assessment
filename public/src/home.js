@@ -75,7 +75,7 @@ function getMostPopularBooks(books) {
     })
     .slice(0, 5);
 }
-
+// to note, 
 function getMostPopularAuthors(books, authors) {
   const count = books.reduce((acc, { authorId, borrows }) => {
     if (acc[authorId]) {
@@ -88,7 +88,7 @@ function getMostPopularAuthors(books, authors) {
   }, {});
 
   for (let id in count) {
-    const sum = count[id].reduce((a, b) => a + b);
+    const sum = count[id].reduce((authorA, authorB) => authorA + authorB);
     count[id] = sum;
   }
 
